@@ -11,6 +11,13 @@ export function MainContainer() {
     const [listTask, setListTask] = useTaskData()
     const [newtask, setNewTask] = useState([])
 
+    const taskCompletedCount = listTask.reduce((count, task) => {
+        if (task.isCompleted) {
+            count++
+        }
+        return count
+    }, 0)
+
     function handleCreateNewTask(event: FormEvent) {
         event.preventDefault()
 
@@ -59,7 +66,7 @@ export function MainContainer() {
                     </div>
                     <div className={styles.completedTasks}>
                         <p>Concluídas</p>
-                        <span>2 de {listTask.length}</span>
+                        <span>{taskCompletedCount} de {listTask.length}</span>
                     </div>
                 </header>
                 <main>
