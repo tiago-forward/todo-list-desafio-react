@@ -1,6 +1,10 @@
 import styles from './Task.module.css'
 
-export function Task({ id, title, isCompleted }) {
+export function Task({ id, title, isCompleted, onDeleteSelectedTask }) {
+    function handleDeleteSelectedTask() {
+        onDeleteSelectedTask(title)
+    }
+    
     return (
         <div className={styles.container} key={id}>
             {isCompleted
@@ -20,7 +24,7 @@ export function Task({ id, title, isCompleted }) {
                         <p className={styles['title-completed']}>{title}</p>
                     )
                 }
-                <i className="ph-bold ph-trash"></i>
+                <i onClick={handleDeleteSelectedTask} className="ph-bold ph-trash"></i>
             </div>
         </div>
     )

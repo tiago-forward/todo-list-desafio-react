@@ -28,6 +28,14 @@ export function MainContainer() {
         setNewTask(event.target.value)
     }
 
+    function deleteSelectedTask(taskToDelete) {
+        const taskWithoutDeletedOne = listTask.filter(task => {
+            return task.title !== taskToDelete
+        })
+
+        setListTask(taskWithoutDeletedOne)
+    }
+
     return (
         <main className={styles.container}>
             <form onSubmit={handleCreateNewTask} className={styles.inputTextContainer}>
@@ -61,6 +69,7 @@ export function MainContainer() {
                                 id={task.id}
                                 title={task.title}
                                 isCompleted={task.isCompleted}
+                                onDeleteSelectedTask={deleteSelectedTask}
                             />
                         )
                     })}
