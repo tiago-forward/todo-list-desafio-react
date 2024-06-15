@@ -1,0 +1,65 @@
+.container {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    border: 1px var(--gray-500);    
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.ph-circle {
+    cursor: pointer;
+    color: var(--blue)
+}
+
+.ph-circle:hover {
+    color: var(--blue-dark)
+}
+
+.ph-check {
+    cursor: pointer;
+    color: var(--gray-100); 
+    background-color: var(--purple);
+    border: none;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 8px;
+}
+
+.ph-check:hover {
+    background-color: var(--purple-dark);
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-completed {
+    font-size: 0.875rem;
+    color: var(--gray-100);
+    padding: 0rem 1.204rem;
+}
+
+.title-no-completed {
+    font-size: 0.875rem;
+    padding: 0rem 1.204rem;
+    text-decoration: line-through;
+}
+
+.task i {
+    color: var(--gray-300);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.task i:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+}

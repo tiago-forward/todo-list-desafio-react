@@ -1,6 +1,7 @@
 .container {
     width: 736px;
     margin: auto;
+    position: relative;
 }
 
 .inputTextContainer {
@@ -8,6 +9,9 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+    position: absolute;
+    top: -26px;
+    width: 100%;
 }
 
 .inputText {
@@ -38,5 +42,50 @@
 }
 
 .tasksContainer {
-    
+    width: 100%;
+}
+
+.tasksContainer header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 0rem 1rem 0;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.createdTasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.createdTasks p {
+    color: var(--blue);
+}
+
+.createdTasks span {
+    color: var(--gray-200);
+    background-color: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.completedTasks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.completedTasks p {
+    color: var(--purple);
+}
+
+.completedTasks span {
+    color: var(--gray-200);
+    background-color: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    border-radius: 1rem;
 }
