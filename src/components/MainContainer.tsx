@@ -1,23 +1,41 @@
-import { FormEvent } from 'react'
-import { Task } from './Task'
+import { ChangeEvent, FormEvent, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 import useTaskData from './hooks/TasksData'
+
+import { Task } from './Task'
 
 import styles from './MainContainer.module.css'
 
 export function MainContainer() {
     const [listTask, setListTask] = useTaskData()
+    const [newtask, setNewTask] = useState([])
 
-    function handleCrateNewTask(event: FormEvent) {
+    function handleCreateNewTask(event: FormEvent) {
         event.preventDefault()
+
+        const Task = {
+            id: uuidv4(),
+            title: newtask,
+            isCompleted: false,
+        }
+
+        setListTask([...listTask, Task])
+        setNewTask('')
+    }
+
+    function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+        setNewTask(event.target.value)
     }
 
     return (
-        <main onSubmit={handleCrateNewTask} className={styles.container}>
-            <form className={styles.inputTextContainer}>
+        <main className={styles.container}>
+            <form onSubmit={handleCreateNewTask} className={styles.inputTextContainer}>
                 <input
                     type="text"
                     placeholder='Adicione uma nova tarefa'
+                    value={newtask}
+                    onChange={handleNewTaskChange}
                     className={styles.inputText}
                 />
                 <button type='submit'>
@@ -29,11 +47,11 @@ export function MainContainer() {
                 <header>
                     <div className={styles.createdTasks}>
                         <p>Tarefas criadas</p>
-                        <span>5</span>
+                        <span>{listTask.length}</span>
                     </div>
                     <div className={styles.completedTasks}>
                         <p>Concluídas</p>
-                        <span>2 de 5</span>
+                        <span>2 de {listTask.length}</span>
                     </div>
                 </header>
                 <main>

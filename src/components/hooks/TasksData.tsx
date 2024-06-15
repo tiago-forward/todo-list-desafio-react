@@ -13,16 +13,6 @@ const useTaskData = () => {
             title: 'Concluir o desafio',
             isCompleted: false
         },
-        {
-            id: uuidv4(),
-            title: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-            isCompleted: true
-        },
-        {
-            id: uuidv4(),
-            title: 'Concluir o desafio',
-            isCompleted: false
-        },
     ])
 
     return [listTask, setListTask]
