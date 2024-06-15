@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
+import { TaskProps } from './hooks/TasksData';
 import useTaskData from './hooks/TasksData'
 
 import { TaskCard } from './TaskCard'
@@ -11,7 +12,7 @@ export function MainContainer() {
     const [listTask, setListTask] = useTaskData()
     const [newtask, setNewTask] = useState([])
 
-    const taskCompletedCount = listTask.reduce((count, task) => {
+    const taskCompletedCount = listTask.reduce((count: number, task: TaskProps) => {
         if (task.isCompleted) {
             count++
         }
@@ -35,16 +36,16 @@ export function MainContainer() {
         setNewTask(event.target.value)
     }
 
-    function deleteSelectedTask(taskToDelete) {
-        const taskWithoutDeletedOne = listTask.filter(task => {
+    function deleteSelectedTask(taskToDelete: string) {
+        const taskWithoutDeletedOne = listTask.filter((task: TaskProps) => {
             return task.id !== taskToDelete
         })
 
         setListTask(taskWithoutDeletedOne)
     }
 
-    function MarkedSelectedTask(taskToMarked) {
-        const updatedTaskList = listTask.map(task => {
+    function MarkedSelectedTask(taskToMarked: string) {
+        const updatedTaskList = listTask.map((task: TaskProps) => {
             let completed = false
             if (task.id === taskToMarked) {
                 if (task.isCompleted === true) {
@@ -86,7 +87,7 @@ export function MainContainer() {
                     </div>
                 </header>
                 <main>
-                    {listTask.map(task => {
+                    {listTask.map((task: TaskProps) => {
                         return (
                             <TaskCard
                                 id={task.id}

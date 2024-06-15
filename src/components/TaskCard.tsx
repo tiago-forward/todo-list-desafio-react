@@ -1,6 +1,14 @@
 import styles from './TaskCard.module.css'
 
-export function TaskCard({ id, title, isCompleted, onDeleteSelectedTask, onMarkedSelectedTask }) {
+interface TaskCardProps {
+    id: string
+    title: string
+    isCompleted: boolean
+    onDeleteSelectedTask: ((task: string) => void)
+    onMarkedSelectedTask: ((task: string) => void)
+}
+
+export function TaskCard({ id, title, isCompleted, onDeleteSelectedTask, onMarkedSelectedTask }: TaskCardProps) {
     function handleDeleteSelectedTask() {
         onDeleteSelectedTask(id)
     }
