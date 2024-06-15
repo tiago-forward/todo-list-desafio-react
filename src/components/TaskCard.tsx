@@ -1,18 +1,22 @@
-import styles from './Task.module.css'
+import styles from './TaskCard.module.css'
 
-export function Task({ id, title, isCompleted, onDeleteSelectedTask }) {
+export function TaskCard({ id, title, isCompleted, onDeleteSelectedTask, onMarkedSelectedTask }) {
     function handleDeleteSelectedTask() {
-        onDeleteSelectedTask(title)
+        onDeleteSelectedTask(id)
+    }
+
+    function handleMarkedSelectedTask() {
+        onMarkedSelectedTask(id)
     }
     
     return (
         <div className={styles.container} key={id}>
             {isCompleted
                 ? (
-                    <i className={`${styles['ph-check']} ph-bold ph-check`}></i>
+                    <i onClick={handleMarkedSelectedTask} className={`${styles['ph-check']} ph-bold ph-check`}></i>
                 )
                 : (
-                    <i className={`${styles['ph-circle']} ph-bold ph-circle`}></i>
+                    <i onClick={handleMarkedSelectedTask} className={`${styles['ph-circle']} ph-bold ph-circle`}></i>
                 )
             }
             <div className={styles.task}>

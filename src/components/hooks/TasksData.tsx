@@ -1,17 +1,18 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react"
 
+interface TaskProps {
+    id: string
+    title: string
+    isCompleted: boolean
+}
+
 const useTaskData = () => {
-    let [listTask, setListTask] = useState([
-        {
-            id: uuidv4(),
-            title: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-            isCompleted: true
-        },
+    let [listTask, setListTask] = useState<TaskProps[]>([
         {
             id: uuidv4(),
             title: 'Concluir o desafio',
-            isCompleted: false
+            isCompleted: true,
         },
     ])
 

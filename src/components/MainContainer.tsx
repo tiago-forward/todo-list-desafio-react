@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import useTaskData from './hooks/TasksData'
 
-import { Task } from './Task'
+import { TaskCard } from './TaskCard'
 
 import styles from './MainContainer.module.css'
 
@@ -18,7 +18,7 @@ export function MainContainer() {
         return count
     }, 0)
 
-    function handleCreateNewTask(event: FormEvent) {
+    function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
         const Task = {
@@ -37,10 +37,26 @@ export function MainContainer() {
 
     function deleteSelectedTask(taskToDelete) {
         const taskWithoutDeletedOne = listTask.filter(task => {
-            return task.title !== taskToDelete
+            return task.id !== taskToDelete
         })
 
         setListTask(taskWithoutDeletedOne)
+    }
+
+    function MarkedSelectedTask(taskToMarked) {
+        const updatedTaskList = listTask.map(task => {
+            let completed = false
+            if (task.id === taskToMarked) {
+                if (task.isCompleted === true) {
+                    completed = false
+                } else {
+                    completed = true
+                }
+                return { ...task, isCompleted: completed }
+            }
+            return task
+        })
+        setListTask(updatedTaskList)
     }
 
     return (
@@ -72,11 +88,12 @@ export function MainContainer() {
                 <main>
                     {listTask.map(task => {
                         return (
-                            <Task
+                            <TaskCard
                                 id={task.id}
                                 title={task.title}
                                 isCompleted={task.isCompleted}
                                 onDeleteSelectedTask={deleteSelectedTask}
+                                onMarkedSelectedTask={MarkedSelectedTask}
                             />
                         )
                     })}
