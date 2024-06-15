@@ -1,0 +1,42 @@
+.container {
+    width: 736px;
+    margin: auto;
+}
+
+.inputTextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.inputText {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    border: 1px var(--gray-700);
+    border-style: solid;
+}
+
+.inputText::placeholder {
+    color: var(--gray-300);
+}
+
+.inputTextContainer button {
+    cursor: pointer;
+    padding: 1rem;
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    border-radius: 8px;
+    border: 1px var(--gray-700);
+    border-style: solid;
+}
+
+.inputTextContainer button:hover {
+    background-color: var(--blue);
+}
+
+.tasksContainer {
+    
+}
