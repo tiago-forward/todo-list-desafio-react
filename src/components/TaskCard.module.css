@@ -44,12 +44,14 @@
     font-size: 0.875rem;
     color: var(--gray-100);
     padding: 0rem 1.204rem;
+    text-transform: capitalize;
 }
 
 .title-no-completed {
     font-size: 0.875rem;
     padding: 0rem 1.204rem;
     text-decoration: line-through;
+    text-transform: capitalize;
 }
 
 .task i {

@@ -10,7 +10,7 @@ import styles from './MainContainer.module.css'
 
 export function MainContainer() {
     const [listTask, setListTask] = useTaskData()
-    const [newtask, setNewTask] = useState([])
+    const [newtask, setNewTask] = useState('')
 
     const taskCompletedCount = listTask.reduce((count: number, task: TaskProps) => {
         if (task.isCompleted) {
@@ -27,7 +27,10 @@ export function MainContainer() {
             title: newtask,
             isCompleted: false,
         }
-
+        console.log(Task.title)
+        if (Task.title === '') {
+            return alert('O preenchimento do campo é obrigatório.')
+        }
         setListTask([...listTask, Task])
         setNewTask('')
     }
