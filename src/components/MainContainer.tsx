@@ -1,15 +1,15 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-import { TaskProps } from './hooks/TasksData';
-import useTaskData from './hooks/TasksData'
+import { TaskProps } from '../hooks/TasksData';
+import { useTaskData } from '../hooks/TasksData'
 
 import { TaskCard } from './TaskCard'
 
 import styles from './MainContainer.module.css'
 
 export function MainContainer() {
-    const [listTask, setListTask] = useTaskData()
+    const { listTask, setListTask } = useTaskData()
     const [newTask, setNewTask] = useState('')
 
     const taskCompletedCount = listTask.reduce((count: number, task: TaskProps) => {
