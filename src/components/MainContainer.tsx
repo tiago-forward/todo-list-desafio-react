@@ -10,7 +10,7 @@ import styles from './MainContainer.module.css'
 
 export function MainContainer() {
     const [listTask, setListTask] = useTaskData()
-    const [newtask, setNewTask] = useState('')
+    const [newTask, setNewTask] = useState('')
 
     const taskCompletedCount = listTask.reduce((count: number, task: TaskProps) => {
         if (task.isCompleted) {
@@ -22,16 +22,16 @@ export function MainContainer() {
     function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
-        const Task = {
+        const Task: TaskProps = {
             id: uuidv4(),
-            title: newtask,
-            isCompleted: false,
+            title: newTask,
+            isCompleted: false
         }
 
         if (Task.title === '') {
             return alert('O preenchimento do campo é obrigatório.')
         }
-        setListTask([...listTask, Task])
+        setListTask((state) => [...state, Task])
         setNewTask('')
     }
 
@@ -69,7 +69,7 @@ export function MainContainer() {
                 <input
                     type="text"
                     placeholder='Adicione uma nova tarefa'
-                    value={newtask}
+                    value={newTask}
                     onChange={handleNewTaskChange}
                     className={styles.inputText}
                 />
