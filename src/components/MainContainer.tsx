@@ -27,7 +27,7 @@ export function MainContainer() {
             title: newtask,
             isCompleted: false,
         }
-        console.log(Task.title)
+
         if (Task.title === '') {
             return alert('O preenchimento do campo é obrigatório.')
         }
