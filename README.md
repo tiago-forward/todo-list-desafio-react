@@ -30,6 +30,10 @@ Desenvolver uma aplicação de controle de tarefas no estilo to-do list, que con
 
 Durante o desenvolvimento desse projeto, meu maior desafio foi em acessar os dados e manupular o objeto, na qual foi criado como um hook personalizado. Pude também praticar os métodos do JavaScript, e resolvi o desafio mais rapidamente.
 
+Outro ponto importante e desafiador, estava em lidar com os erros de tipagem em meu código em alguns métodos do JavaScript e no estado do meu useTaskData, depois de muita pesquisa pude perceber que estava faltando eu atribuir uma melhor tipagem no meu hook de useTaskData. Foi declarado a minha função o valor do retorno do primeiro elemento `TaskProps` e o segundo elemento da minha função de atualizar o estado, com o `Dispatch` que serve para despachar ações, o tipo genérico do react, `SetStateAction` que pode ser um novo valor direito do estado ou uma função que recebe o valor atual do estado e retorna o novo valor do estado, e por fim, especificar que o estado em questão é uma array de `TraskProps`.
+
+<img src="./src/assets/ts-0.png" alt="">
+
 ## Status
 
 Desafio concluído. 🥰
