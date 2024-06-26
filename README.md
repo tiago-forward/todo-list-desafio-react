@@ -3,14 +3,15 @@
 ## Tabela do Conteudo
 
 <ul>
-<li><a href="#introdução">Introdução</a></li>
-<li><a href="#objetivo">Objetivo</a></li>
-<li><a href="#desafio">Desafio</a></li>
-<li><a href="#status">Status</a></li>
-<li><a href="#curiosidade">Curiosidade</a></li>
-<li><a href="#layout-do-projeto">Layoult do projeto</a></li>
-<li><a href="#tecnologias-e-bibliotecas-utilizadas">Tecnologias e bibliotecas</a></li>
-<li><a href="#instalando-e-executando-o-projeto">Instalação</a></li>
+ <li><a href="#introdução">Introdução</a></li>
+ <li><a href="#objetivo">Objetivo</a></li>
+ <li><a href="#desafio">Desafio</a></li>
+ <li><a href="#status">Status</a></li>
+ <li><a href="#curiosidade">Curiosidade</a></li>
+ <li><a href="#layout-do-projeto">Layoult do projeto</a></li>
+ <li><a href="#tecnologias-e-bibliotecas-utilizadas">Tecnologias e bibliotecas</a></li>
+ <li><a href="#instalando-e-executando-o-projeto">Instalação</a></li>
+ <li><a href="#acessando-o-site">Acessando o site</a></li>
 </ul>
 
 ## Introdução
@@ -98,4 +99,8 @@ Em sua máquina, crie uma nova pasta e execute o git, e em seguida cole um dos l
 
 ```bash
   npm run dev
-``` -->
+```
+
+## Acessando o site
+
+Para acessar meu projeto online, acesse esse link : <a href="https://todo-list-desafio-react-8kd4.vercel.app/" target="_blank">Desafio React (Rocketseat) - ToDo List</a>
